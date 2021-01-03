@@ -6,27 +6,35 @@ numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 number = random.choice(numbers)
 
-print(number)
+#print(number)
 
 answer = int(input("What is your guess?"))
 
 #state machine
 def Answer():
-    if answer == random.choice(numbers):
+    if answer == number:
         print(" you win")
 
-Answer()
+while True:
+
+    print("Try again")
+
+    Answer()
 
 #hint generator
-def Hint():
-    if number /2:
-        hint = "it's an even digit"
-    else:
-        hint2 = "It's an uneven digit"
-    if answer != random.choice(numbers):
-        if number /2:
-            print(f"Here's a hint for you: {hint}")
+    def Hint():
+        if number % 2 == 0:
+            hint = "it's an even digit"
         else:
-            print(f"Here's a hint for you: {hint2}")
+            hint2 = "It's an odd digit"
+        if answer != number:
+            if number % 2 == 0:
+                print(f"Here's a hint for you: {hint}")
+            else:
+                print(f"Here's a hint for you: {hint2}")
 
-Hint()
+    Hint()
+
+    Answer()
+    if answer != number:
+        pass
