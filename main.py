@@ -5,7 +5,6 @@ print("Numbers are generated from 1 to 10")
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 
-
 number = random.choice(numbers)
 
 while True:
@@ -18,9 +17,7 @@ while True:
         if answer == number:
             print(" you win")
 
-
     Answer()
-
 
 #hint generator
     def Hint():
@@ -35,6 +32,7 @@ while True:
                 print(f"Here's a hint for you: {hint2}")
 
     Hint()
-
     if answer == number:
-        break
+        play_again = input("Wanna play again?")
+        if play_again != 'yes':
+            break
